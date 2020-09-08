@@ -11,7 +11,7 @@
 } */
 
 .social-links{
-    text-align: center;
+    text-align: left;
     padding-bottom: 40px;
     padding-top: 50px;
 
@@ -28,4 +28,27 @@
 
 .social-links a:hover{
     color:rgb(3, 3, 3);
+}
+
+/* .h1{
+    
+} */
+
+.header-logo{
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Overpass', sans-serif;
+}
+
+.header-logo p{
+    font-size: medium;
+    text-align: center;
+}
+
+.general-info{
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Overpass', sans-serif;
+    font-size: large;
 }
