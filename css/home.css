@@ -59,3 +59,10 @@
 .section-content{
     padding-top: 10px;
 }
+
+.footnote{
+    color: honeydew;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(14, 46, 134);
+}
