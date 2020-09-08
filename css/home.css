@@ -47,3 +47,15 @@
     font-family: 'Overpass', sans-serif;
     font-size: large;
 }
+
+.section-heading{
+    /* text-decoration-line: underline;
+    text-decoration-color: turquoise;
+    text-decoration-style: solid; */
+    padding-bottom: 5px;
+    border-bottom: 2px solid turquoise;
+}
+
+.section-content{
+    padding-top: 10px;
+}
