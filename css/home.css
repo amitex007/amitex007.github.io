@@ -1,7 +1,7 @@
 .topheading{
-    background-color: #cfcccc;
+    background-color: #f2f7f8;
 }
 
 .profileImage{
-    height:200px;
+    max-height:300px;
 }
