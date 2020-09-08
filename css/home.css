@@ -13,7 +13,7 @@
 .social-links{
     text-align: left;
     padding-bottom: 40px;
-    padding-top: 50px;
+    padding-top: 10px;
 
 }
 
@@ -22,17 +22,12 @@
     transition: all 0.3s;
     background: transparent;
     padding-right: 30px;
-    padding-top: 20px;
-
 }
 
 .social-links a:hover{
     color:rgb(3, 3, 3);
 }
 
-/* .h1{
-    
-} */
 
 .header-logo{
     font-family: 'Comfortaa', cursive;
