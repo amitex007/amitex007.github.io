@@ -9,8 +9,13 @@ let actionListeners = function(){
             '_blank' 
         );
         }
-
     }); 
 }
 
+let postLoad = function(){
+    let preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+}
+
 actionListeners();
+window.onload = postLoad;
