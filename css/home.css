@@ -5,7 +5,12 @@
     height:100vh;
     background: #fff url('../img/preloader.gif') no-repeat center;
     z-index: 9999;
-    
+    transition: opacity 0.5s ease;    
+}
+
+.post-finish{
+    opacity: 0;
+    pointer-events: none;
 }
 
 .topheading{

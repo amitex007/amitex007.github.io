@@ -12,10 +12,9 @@ let actionListeners = function(){
     }); 
 }
 
-let postLoad = function(){
-    let preloader = document.getElementById('preloader');
-    preloader.style.display = 'none';
-}
-
 actionListeners();
-window.onload = postLoad;
+// window.onload = postLoad;
+window.addEventListener('load', ()=>{
+    let preloader = document.getElementById('preloader');
+    preloader.classList.add('post-finish');
+})
