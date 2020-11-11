@@ -12,9 +12,19 @@
     opacity: 0;
     pointer-events: none;
 }
+.navbar{
+    color: honeydew;
+}
 
 .topheading{
-    background-color: #edf4f5;
+    /* background-color: #edf4f5; */
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Overpass', sans-serif;
+}
+.topheading p{
+    font-size: medium;
+    text-align: center;
 }
 
 
@@ -36,18 +46,6 @@
     color:rgb(3, 3, 3);
 }
 
-
-.header-logo{
-    font-family: 'Comfortaa', cursive;
-    font-family: 'Lexend Peta', sans-serif;
-    font-family: 'Overpass', sans-serif;
-    left: 10px;
-}
-
-.header-logo p{
-    font-size: medium;
-    text-align: center;
-}
 
 .general-info{
     font-family: 'Comfortaa', cursive;
