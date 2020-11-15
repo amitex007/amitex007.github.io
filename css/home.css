@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
 #preloader{
     position: fixed;
     width:100%;
@@ -59,6 +59,8 @@
     /* text-decoration-line: underline;
     text-decoration-color: turquoise;
     text-decoration-style: solid; */
+    /* font-family: 'Dancing Script', cursive;
+    font-family: 'Pacifico', cursive; */
     padding-bottom: 5px;
     border-bottom: 2px solid turquoise;
 }
@@ -73,9 +75,15 @@
     padding: 10px;
     background-color: rgb(14, 46, 134);
 }
+.heading-links{
+    align-items: center;
+}
 
-.heading-button{
+.heading-btn{
+    min-width: 100px;
    align-items: center;
+   font-family: 'Dancing Script', cursive;
+    font-family: 'Pacifico', cursive;
 }
 
 
