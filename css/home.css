@@ -165,3 +165,8 @@
     font-size: 0.875em;
     color: #e74c3c;
   }
+.hobby-card-img{
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+}
