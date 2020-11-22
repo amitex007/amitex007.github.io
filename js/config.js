@@ -5,6 +5,6 @@ export const subdomains = [
     },
     {
         "dmn": "cv",
-        "url": "http://blog.amitoshanand.com"
+        "url": "/res/amitosh_anand_cv.pdf"
     }
 ]
