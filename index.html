@@ -147,9 +147,17 @@
                     </div>
                     <div class="modal-body">
 
-                        <p>Submit a request for my resume to get a detailed resume pertinent to the collaboration you
+                        <p id="cvMessage">Submit a request for my resume to get a detailed resume pertinent to the collaboration you
                             are seeking for.</p>
-                        <form method="POST"
+                        <div class="alert alert-success" role="alert" id="successRequest">Successfully Requested! Please wait for about 24 hours before I reply.</div>
+                        <div id="failureRequest" class="alert alert-danger" role="alert">Seems like some error occurred! Please refresh page and try again</div>
+                        <div class="text-center" id="cvloader" >
+                            <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+
+                        </div>
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                        <form id="resumeForm" method="POST"
                             action="https://script.google.com/macros/s/AKfycbz1P8fxgwLxwFqba3GgbmuCKwfWD_iaG4vn40B4Eq0oUkQFkck/exec">
                             <div class="form-group">
                                 <label for="requesterName">Name</label>
@@ -174,7 +182,7 @@
                             <button type="submit" class="btn btn-primary">Get resume in email</button>
 
                         </form>
-                        <i>OR</i>
+                        <div>OR</div>
                         <button type="button" class="btn btn-primary pt-2 mt-2" id="cv-btn">Download current generic
                             version</button>
                         <!-- <form id="gForm" method="POST"
@@ -251,9 +259,13 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" 
+            integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" 
+            crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
