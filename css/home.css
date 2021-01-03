@@ -8,6 +8,9 @@
     transition: opacity 0.5s ease;    
 }
 
+.page-container{
+    min-height: 95vh;
+}
 .post-finish{
     opacity: 0;
     pointer-events: none;
