@@ -11,6 +11,10 @@
 .page-container{
     min-height: 95vh;
 }
+.main-content{
+    max-width: 100em;
+    margin: auto;
+}
 .post-finish{
     opacity: 0;
     pointer-events: none;
