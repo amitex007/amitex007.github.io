@@ -1443,3 +1443,22 @@ input:checked {
   display: flex;
 }
 
+
+.social-links{
+  text-align: left;
+  padding-bottom: 40px;
+  padding-top: 10px;
+
+}
+
+.social-links a{
+  color:rgb(136, 130, 130);
+  transition: all 0.3s;
+  background: transparent;
+  padding-right: 30px;
+}
+
+.social-links a:hover{
+  color:rgb(3, 3, 3);
+}
+
