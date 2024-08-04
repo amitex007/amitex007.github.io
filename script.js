@@ -81,9 +81,9 @@ let educobserver = new IntersectionObserver(
 );
 
 educationEls.forEach((eduEl) => {
-  console.log('hello', eduEl);
   educobserver.observe(eduEl);
-});
+})
+;
 
 // Toggle theme and store user preferred theme for future
 
