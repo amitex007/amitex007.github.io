@@ -599,6 +599,15 @@ body.light .header {
   transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.logo-head {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  max-block-size: 60px;
+  max-inline-size: 150px;
+  transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 @media (max-width: 845px) {
   .logo {
     max-inline-size: 100px;
@@ -1094,6 +1103,10 @@ body.dark .education-links img {
 .testimonial-text {
   font-size: var(--text-small);
   margin-block-end: var(--gutter-x-small);
+  font-family: 'Sanchez', serif;
+  /* font-size: 1.2em; */
+  /* line-height: 1.5em; */
+  font-style: italic;
 }
 
 .testimonial-author {
