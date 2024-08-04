@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amitosh Anand | Software Engineer | Explorer</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lexend+Peta&family=Overpass&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Dosis:wght@300&family=Lexend+Peta&family=Overpass&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/4a767c42e9.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="container-fluid p-0 m-0 page-container">
+        <header>
+            <div class="row m-0 navbar bg-dark box-shadow mb-2">
+                <div class="col-xl-4 col-lg-4 topheading">
+
+                    <h1 class="mb-0">Amitosh Anand</h1>
+                    <p class="mb-0">- Software Engineer | Adventurer</p>
+
+
+
+                </div>
+                <div class="col-xl-8 col-lg-8 text-md-right text-sm-left">
+                    <div class="heading-links mb-0 mt-3">
+                        <button type="button" class="heading-btn btn btn-light" id="blog-btn">Blog</button>
+                        <button type="button" class="heading-btn btn btn-primary" id="cv-modal" data-toggle="modal"
+                            data-target="#cvModal">Resume</button>
+                        <!-- Modal -->
+
+                        <!-- <button type="button" class="heading-btn btn btn-primary" id="cv-btn">Resume</button> -->
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <div class="main-content">
+            <div class="row m-0">
+                <div class="col-xl-4 col-lg-4 profile-image">
+                    <div class="row">
+                        <div class="col-md-11 mt-3">
+                            <figure>
+                                <img class='image-profile' src="img/headshot.jpg" alt="my profile image">
+                            </figure>
+                        </div>
+                        <div class="col-md-11 profile-quote">
+                            <blockquote class="brooks" cite="">
+
+                                Questioning beliefs to find truths, for one who only believes is bound to falter.
+
+                            </blockquote>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <div class="col-xl-8 col-lg-8">
+                    <div>
+                        <section class="section-heading pt-5">
+                            <h2>About Me</h2>
+                        </section>
+                        <section class="section-content general-info">
+                            <ul>
+                                <li>
+                                    <span>
+                                        Passionate for Science and Tech
+                                    </span>
+
+                                </li>
+                                <li>
+                                    <span>
+                                        Driven Software Engineer and Researcher
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        Multi-Hobbyist
+                                    </span>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="pt-4">
+                        <section class="section-heading">
+                            <h2>Connect with me!</h2>
+                        </section>
+
+
+                        <section class="section-content">
+                            <div class="social-links">
+
+                                <a href="https://www.linkedin.com/in/amitosh-anand-1696aa2b/" target="_blank">
+                                    <i class="fab fa-linkedin fa-2x"></i>
+                                </a>
+                                <a href="https://github.com/amitex007" target="_blank">
+                                    <i class="fab fa-github fa-2x"></i>
+                                </a>
+                                <a href="https://www.facebook.com/amitex007" target="_blank">
+                                    <i class="fab fa-facebook fa-2x"></i>
+                                </a>
+                                <a href="https://instagram.com/amitex007" target="_blank">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+
+                                <!-- <a href="https://twitter.com/amitex007" target="_blank">
+                                     <i class="fab fa-twitter fa-2x" ></i>
+                                 </a> -->
+                                <a href="https://www.twitch.tv/amitex007" target="_blank">
+                                    <i class="fab fa-twitch fa-2x"></i>
+                                </a>
+                                <!-- <a href="https://steamcommunity.com/profiles/76561198108994807/" target="_blank">
+                                     <i class="fab fa-steam fa-2x" ></i>
+                                 </a> -->
+
+                            </div>
+
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal fade" id="cvModal" tabindex="-1" role="dialog" aria-labelledby="cvModalTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="cvModalTitle">Resume</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <p id="cvMessage">Submit a request for my resume to get a detailed resume pertinent to the
+                                collaboration you
+                                are seeking for.</p>
+                            <div class="alert alert-success" role="alert" id="successRequest">Successfully Requested!
+                                Please wait for about 24 hours before I reply.</div>
+                            <div id="failureRequest" class="alert alert-danger" role="alert">Seems like some error
+                                occurred! Please refresh page and try again</div>
+                            <div class="text-center" id="cvloader">
+                                <div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+
+                                </div>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <form id="resumeForm" method="POST"
+                                action="https://script.google.com/macros/s/AKfycbz1P8fxgwLxwFqba3GgbmuCKwfWD_iaG4vn40B4Eq0oUkQFkck/exec">
+                                <div class="form-group">
+                                    <label for="requesterName">Name</label>
+                                    <input type="text" class="form-control" id="requesterName" name="name"
+                                        placeholder="Your Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="requester-email">Email address</label>
+                                    <input type="email" class="form-control" id="requester-email" name="email"
+                                        placeholder="example@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="requester-company">Company Or Institution</label>
+                                    <input type="text" class="form-control" id="requester-company" name="company"
+                                        placeholder="Where do you work or study">
+                                </div>
+                                <div class="form-group">
+                                    <label for="requester-reason">Looking for?</label>
+                                    <input type="text" class="form-control" id="requester-reason" name="reason"
+                                        placeholder="What are you looking for?">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Get resume in email</button>
+
+                            </form>
+                            <div>OR</div>
+                            <button type="button" class="btn btn-primary pt-2 mt-2" id="cv-btn">Download current generic
+                                version</button>
+                            <!-- <form id="gForm" method="POST"
+                       action="https://script.google.com/macros/s/AKfycbz1P8fxgwLxwFqba3GgbmuCKwfWD_iaG4vn40B4Eq0oUkQFkck/exec">
+                       <input type="text" id="email" name="email">
+                       <input type="text" id="color2" name="color2">
+                       <input type="submit" value="Submit">
+                   </form> -->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card text-center">
+                <div class="card-header shadow">
+                    <nav class="nav nav-pills nav-fill justify-content-center" role="tablist">
+
+                        <a class="nav-item active nav-link" data-toggle="pill" href="#work-tab">WORK</a>
+
+                        <a class="nav-item nav-link" data-toggle="pill" href="#edu-tab">EDUCATION</a>
+
+                        <a class="nav-item nav-link" data-toggle="pill" href="#hobby-tab">HOBBIES</a>
+
+                    </nav>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div id="work-tab" class="tab-pane active"><br>
+                            <h3 class="card-title">Professional Experience</h3>
+                            <p class="card-text">Software Engineer II </p>
+                            <a href="https://olacabs.com" target="_blank" class="card-text">@ OLA,Bangalore,India</a>
+                            <p class="card-text">May 2017-Present</p>
+                        </div>
+                        <div id="edu-tab" class="tab-pane fade"><br>
+                            <h3 class="card-title">Education And Research</h3>
+                            <p class="card-text">Bachelors/Masters in Technology,Computer Science & Engineering </p>
+                            <a href="http://www.iitbhu.ac.in" target="_blank" class="card-text">Indian Institute of
+                                Technology, BHU, Varanasi</a>
+
+                            <p class="card-text">2012-2017</p>
+                        </div>
+                        <div id="hobby-tab" class="tab-pane fade text-center">
+                            <div style="display: inline-block; text-align: left;">
+                                <h3 class="card-title">Hobbies</h3>
+                                <p class="card-text">Guitar- Metal and Rock</p>
+                                <p class="card-text">Photography- Night Photography | Landscapes</p>
+                                <p class="card-text">Rides and travelling- Bikes | BiCycle | Cars</p>
+                                <p class="card-text">Gaming- AAA Titles and Dota 2</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer pt-4 pb-4 bg-dark">
+        <div class="text-center small footer-text">
+
+            Designed & Developed by Amitosh Anand &#169 Copyright 2020: Email: <a class="text-light"
+                href="mailto:amitex007@gmail.com">amitex007@gmail.com</a>
+
+        </div>
+    </footer>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script type="module" src="/js/config.js"></script>
+    <script type="module" src="/js/main.js"></script>
+
+</body>
+
+</html>
