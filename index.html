@@ -1,411 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
 
-    <meta
-      name="description"
-      content="Welcome to my digital passport. I am a software engineer professionally and a musician as a hobbyist."
-    />
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="index, follow" />
 
-    <!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="Amitosh Anand">
-<meta itemprop="description" content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
+	<meta name="description"
+		content="Welcome to my digital passport. I am a software engineer professionally and a musician as a hobbyist." />
 
-<!-- Reference screenshot of updated site's header in place of content -->
-<meta itemprop="image" content="assets/images/sharing-card.png">
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="Amitosh Anand">
+	<meta itemprop="description"
+		content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://amitoshanand.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Amitosh Anand's Space">
-<meta property="og:description" content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
+	<!-- Reference screenshot of updated site's header in place of content -->
+	<meta itemprop="image" content="assets/images/sharing-card.png">
 
-<!-- Reference screenshot of updated site's header in content -->
-<meta property="og:image" content="assets/images/sharing-card.png">
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://amitoshanand.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Amitosh Anand's Space">
+	<meta property="og:description"
+		content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
 
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Amitosh Anand's Space">
-<meta name="twitter:description" content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
+	<!-- Reference screenshot of updated site's header in content -->
+	<meta property="og:image" content="assets/images/sharing-card.png">
 
-<!-- Reference screenshot of updated site's header in content -->
-<meta name="twitter:image" content="assets/images/sharing-card.png">
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Amitosh Anand's Space">
+	<meta name="twitter:description"
+		content="Welcome to my portfolio website.  I am a software engineer professionally and a musician as a hobbyist.">
+
+	<!-- Reference screenshot of updated site's header in content -->
+	<meta name="twitter:image" content="assets/images/sharing-card.png">
 
 
-<!-- Update favicon href attribute with image of yourself -->
-    <link
-      rel="shortcut icon"
-      href="assets/images/favicons.png"
-      type="image/png"
-    />
+	<!-- Update favicon href attribute with image of yourself -->
+	<link rel="shortcut icon" href="assets/images/favicons.png" type="image/png" />
 
-    <!-- Preloading fonts for better performance -->
+	<!-- Preloading fonts for better performance -->
 
-    <link
-      rel="preload"
-      href="assets/fonts/Mona-Sans.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+	<link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
 
-    <link rel="stylesheet" href="style.css"  />
-    <script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script src="script.js" defer></script>
 
-    <!-- Your name here -->
-    <title>Amitosh Anand's Space</title>
-  </head>
+	<!-- Your name here -->
+	<title>Amitosh Anand's Space</title>
+</head>
 
-  <body>
+<body>
 
-    <script>
-      const theme = localStorage.getItem("theme") || "dark";
-      document.body.classList.add(theme);
-    </script>
+	<script>
+		const theme = localStorage.getItem("theme") || "dark";
+		document.body.classList.add(theme);
+	</script>
 
-    <header class="header">
+	<header class="header">
 
-      <div class="menu-btn-container">
-        <div class="container">
-          <button type="button"  class="menu-btn">menu</button>
-        </div>
-      </div>
+		<div class="menu-btn-container">
+			<div class="container">
+				<button type="button" class="menu-btn">menu</button>
 
-      <nav class="nav hidden">
-        <ol class="nav-items">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#work">My Work</a></li>
-          <li class="nav-item"><a href="#blog">See Blog</a></li>
-          <li class="nav-item"><a href="#skills">My Skills</a></li>
-          <li class="nav-item">
-            <a href="#contact" data-focused="last-focused">Contact</a>
-          </li>
-        </ol>
-      </nav>
+			</div>
+		</div>
 
-      <div class="container">
-        <div class="header-textbox">
-          <h1 class="h1">
-            <span>Hi, I'm Amitosh Anand</span>
-            <span>Engineer <> Adventurer</span>
-          </h1>
-          <p class="header-text">
-            Driven Software Engineer and Researcher who is passionate for Science and Tech
-          </p>
 
-          <div class="header-btns">
-            <a href="#contact" class="btn btn-cta">Contact Me</a>
-            <a href="#work" class="btn btn-secondary">See my work</a>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <section class="client">
-        <div class="container">
-          <h2 class="h2">Interests</h2>
-          <div class="logos">
-            <div class="logo-group">
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/node-js.jpeg"
-                alt="Node Js"
-                class="logo hide to-top"
-              />
+		<nav class="nav hidden">
+			<ol class="nav-items">
+				<li class="nav-item"><a href="#">Home</a></li>
+				<li class="nav-item"><a href="#work">My Work</a></li>
+				<!-- <li class="nav-item"><a href="#blog">See Blog</a></li> -->
+				<li class="nav-item"><a href="#skills">My Skills</a></li>
+				<li class="nav-item">
+					<a href="#contact" data-focused="last-focused">Contact</a>
+				</li>
+			</ol>
+		</nav>
 
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/Java_programming_language_logo.svg"
-                alt="Java"
-                class="logo"
-              />
+		<div class="dark-mode-container">
 
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/go-pl.png"
-                alt="Theia"
-                class="logo hide to-bottom"
-              />
-            </div>
-            <div class="logo-group">
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/metallica.png"
-                alt="Metallica"
-                class="logo hide to-top"
-              />
+			<label class="theme-switch" for="theme-switch">
+				<!-- <span>Lights off</span> -->
+				<i class="fas fa-sun"></i>
+				<input type="checkbox" id="theme-switch" role="switch" />
+				<i class="fas fa-moon"></i>
 
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/Porcupine_treelogo2.webp"
-                alt="Chippy"
-                class="logo"
-              />
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/Tool_logo_2006.svg.png"
-                alt="Tool"
-                class="logo hide to-bottom"
-              />
-            </div>
-            <div class="logo-group">
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/witcher3.png"
-                alt="Witcher 3"
-                class="logo hide to-top"
-              /><img
-                loading="lazy"
-                src="assets/images/trusted-by/Halo-Logo.png"
-                alt="Halo"
-                class="logo"
-              /><img
-                loading="lazy"
-                src="assets/images/trusted-by/Half-Life-Logo.jpg"
-                alt="Mighty furniture's"
-                class="logo hide to-bottom"
-              />
-            </div>
-            <div class="logo-group">
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/KTM-Logo.jpg"
-                alt="Ktm"
-                class="logo hide to-top"
-              />
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/Nvidia_logo.svg.png"
-                alt="Nvidia"
-                class="logo"
-              />
-              <img
-                loading="lazy"
-                src="assets/images/trusted-by/open-ai-logo.png"
-                alt="Open AI"
-                class="logo hide to-bottom"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+			</label>
+		</div>
+		
+		<div class="container">
+			<div class="header-textbox">
+				<h1 class="h1">
+					<span>Hi, I'm Amitosh Anand</span>
+					<span>Engineer <> Adventurer</span>
+				</h1>
+				<p class="header-text">
+					Driven Software Engineer and Researcher who is passionate for Science and Tech
+				</p>
 
-      <section class="work">
-        <div class="container">
-          <h2 class="h2" id="work">Experience</h2>
-          <div class="work-boxes">
-            <div class="work-box">
-              <div class="work-textbox">
-                <h3 class="h3">Refyne India</h3>
-                <p class="work-text">
-                  Lead Engineer. Refyne is a India's largest Earned wage access platform for salaried and gig workers.
-                  I joined as the first senior software engineer and was a part of the 0 to 1 growth of the company.
-                  Currently, I lead the engineering vertical dealing with integrations and platform.
-                </p>
-                <ol class="work-technologies">
-                  <li>Nest Js</li>
-                  <li>MongoDb</li>
-                  <li>AWS</li>
-                  <li>Fintech</li>
-                </ol>
+				<div class="header-btns">
+					<a href="#contact" class="btn btn-cta">Contact Me</a>
+					<a href="#work" class="btn btn-secondary">See my work</a>
+				</div>
+			</div>
+		</div>
+	</header>
 
-                <div class="work-links">
-                  <a href="https://refyne.co.in" target="_blank" rel="noopener" class="link"
-                    >Refyne India Homepage</a
-                  >
-                  <a
-                    href="https://refyne.co.in"
-                    target="_blank"
-                    rel="noopener"
-                    title="Refyne homepage"
-                  >
-                    <img
-                      src="assets/images/social-links/refyne-logo.svg"
-                      alt="Refyne homepage"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
+	<main>
+		<section class="client">
+			<div class="container">
+				<h2 class="h2">Interests</h2>
+				<div class="logos">
+					<div class="logo-group">
+						<img loading="lazy" src="assets/images/trusted-by/node-js.jpeg" alt="Node Js"
+							class="logo hide to-top" />
 
-                <div class="work-links">
-                  <a href="https://refyne.co.in" target="_blank" rel="noopener" class="link"
-                    >Refyne Tech Github</a
-                  >
-                  <a
-                    href="https://github.com/refyne"
-                    target="_blank"
-                    rel="noopener"
-                    title="Refyne OSS"
-                  >
-                    <img
-                      src="assets/images/social-links/github.svg"
-                      alt="GitHub"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
+						<img loading="lazy" src="assets/images/trusted-by/Java_programming_language_logo.svg" alt="Java"
+							class="logo" />
 
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/refyne-homepage.png"
-                  alt="Refyne Homepage"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <h3 class="h3">Ola</h3>
+						<img loading="lazy" src="assets/images/trusted-by/go-pl.png" alt="Theia"
+							class="logo hide to-bottom" />
+					</div>
+					<div class="logo-group">
+						<img loading="lazy" src="assets/images/trusted-by/metallica.png" alt="Metallica"
+							class="logo hide to-top" />
 
-                <p class="work-text">Joined as a Software Engineer as a fresher in the Supply team. Worked on scaling the onboarding from India to international market. Worked on Auto/Bikes onboarding through a self signup platform</p>
-                <ol class="work-technologies">
-                  <li>Express Js</li>
-                  <li>Node Js</li>
-                  <li>Mongo Db</li>
-                  <li>Spring</li>
-                  <li>Java</li>
-                </ol>
-                <div class="work-links">
-                  <a href="https://www.olacabs.com/" target="_blank" rel="noopener" class="link"
-                    >Ola Cabs India</a
-                  >
-                  <a
-                    href="https://www.olacabs.com/"
-                    target="_blank"
-                    rel="noopener"
-                    title="Ola cabs"
-                  >
-                    <img
-                      src="assets/images/social-links/ola-white-logo.svg"
-                      alt="Olacabs"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-                <div class="work-links">
-                  <a href="https://github.com/olacabs" target="_blank" rel="noopener" class="link"
-                    >OlaCabs OSS </a
-                  >
-                  <a
-                    href="https://github.com/olacabs"
-                    target="_blank"
-                    rel="noopener"
-                    title="Ola cabs oss"
-                  >
-                  </a>
-                </div>
-              </div>
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/ola-drive-homepage.png"
-                  alt="ola driver onboarding international"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <h3 class="h3">Goldman Sachs</h3>
-                <p class="work-text">
-                  Summer Analyst. Software Engineer Intern. Worked in Data platforms team for Private Wealth Management division. Project involved building a data governance platform for Hive queries.
-                </p>
-                <ol class="work-technologies">
-                  <li>Springboot</li>
-                  <li>Java</li>
-                  <li>MongoDb</li>
-                  <li>Angular Js</li>
-                </ol>
-                <div class="work-links">
-                  <a href="https://www.goldmansachs.com/" target="_blank" rel="noopener" class="link"
-                    >Goldman Sachs</a
-                  >
-                  <a
-                    href="https://www.goldmansachs.com/"
-                    target="_blank"
-                    rel="noopener"
-                    title="GS Home page"
-                  >
-                    <img
-                      src="assets/images/social-links/goldman-sachs.png"
-                      alt="Goldman Sachs"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-                <div class="work-links">
-                  <a href="https://www.goldmansachs.com/" target="_blank" rel="noopener" class="link"
-                    >Goldman Sachs OSS</a
-                  >
-                  <a
-                    href="https://github.com/goldmansachs"
-                    target="_blank"
-                    rel="noopener"
-                    title="GS Opensource"
-                  >
-                    <img
-                      src="assets/images/social-links/github.svg"
-                      alt="GS OSS"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/gslogo.jpeg"
-                  alt="Goldman Sachs"
-                />
-              </picture>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="education">
-        <div class="container">
-          <h2 class="h2" id="education">Education</h2>
-          <div class="education-boxes">
-            <div class="education-box">
-              <div class="education-textbox">
-                <h3 class="h3">Indian Institute of Technology, Varanasi(BHU)</h3>
-                <p class="education-text">
-                  Computer Science and Engineering, B.tech + M.Tech
-                </p>
-                <ol class="education-technologies">
-                  <li>2012-2017</li>
-                  <li>Gold Medal In IDD</li>
-                  <li>Quantum Monks(CTF Team)</li>
-                </ol>
+						<img loading="lazy" src="assets/images/trusted-by/Porcupine_treelogo2.webp" alt="Chippy"
+							class="logo" />
+						<img loading="lazy" src="assets/images/trusted-by/Tool_logo_2006.svg.png" alt="Tool"
+							class="logo hide to-bottom" />
+					</div>
+					<div class="logo-group">
+						<img loading="lazy" src="assets/images/trusted-by/witcher3.png" alt="Witcher 3"
+							class="logo hide to-top" /><img loading="lazy" src="assets/images/trusted-by/Halo-Logo.png"
+							alt="Halo" class="logo" /><img loading="lazy"
+							src="assets/images/trusted-by/Half-Life-Logo.jpg" alt="Mighty furniture's"
+							class="logo hide to-bottom" />
+					</div>
+					<div class="logo-group">
+						<img loading="lazy" src="assets/images/trusted-by/KTM-Logo.jpg" alt="Ktm"
+							class="logo hide to-top" />
+						<img loading="lazy" src="assets/images/trusted-by/Nvidia_logo.svg.png" alt="Nvidia"
+							class="logo" />
+						<img loading="lazy" src="assets/images/trusted-by/open-ai-logo.png" alt="Open AI"
+							class="logo hide to-bottom" />
+					</div>
+				</div>
+			</div>
+		</section>
 
-                <div class="education-links">
-                  <a href="https://www.iitbhu.ac.in/" target="_blank" rel="noopener" class="link">IIT bhu homepage</a>
-                  <a
-                    href="https://www.iitbhu.ac.in/"
-                    target="_blank"
-                    rel="noopener"
-                    title="IIT Bhu homepage"
-                  >
+		<section class="work">
+			<div class="container">
+				<h2 class="h2" id="work">Experience</h2>
+				<div class="work-boxes">
+					<div class="work-box">
+						<div class="work-textbox">
+							<h3 class="h3">Refyne India</h3>
+							<p class="work-text">
+								Lead Engineer. Refyne is a India's largest Earned wage access platform for salaried and
+								gig workers.
+								I joined as the first senior software engineer and was a part of the 0 to 1 growth of
+								the company.
+								Currently, I lead the engineering vertical dealing with integrations and platform.
+							</p>
+							<ol class="work-technologies">
+								<li>Nest Js</li>
+								<li>MongoDb</li>
+								<li>AWS</li>
+								<li>Fintech</li>
+							</ol>
 
-                </a>
-                </div>
-            </div>
-            <picture class="education-img">
-              <img
-                loading="lazy"
-                src="assets/images/work/iit_logo_original.png"
-                alt="IIT BHU Homepage"
-              />
-            </picture>                       
-          </div>
-        </div>
-      </section>
-<!-- 
+							<div class="work-links">
+								<a href="https://refyne.co.in" target="_blank" rel="noopener" class="link">Refyne India
+									Homepage</a>
+								<a href="https://refyne.co.in" target="_blank" rel="noopener" title="Refyne homepage">
+									<img src="assets/images/social-links/refyne-logo.svg" alt="Refyne homepage"
+										loading="lazy" />
+								</a>
+							</div>
+
+							<div class="work-links">
+								<a href="https://refyne.co.in" target="_blank" rel="noopener" class="link">Refyne Tech
+									Github</a>
+								<a href="https://github.com/refyne" target="_blank" rel="noopener" title="Refyne OSS">
+									<img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
+								</a>
+							</div>
+						</div>
+
+						<picture class="work-img">
+							<img loading="lazy" src="assets/images/work/refyne-homepage.png" alt="Refyne Homepage" />
+						</picture>
+					</div>
+					<div class="work-box">
+						<div class="work-textbox">
+							<h3 class="h3">Ola</h3>
+
+							<p class="work-text">Joined as a Software Engineer as a fresher in the Supply team. Worked
+								on scaling the onboarding from India to international market. Worked on Auto/Bikes
+								onboarding through a self signup platform</p>
+							<ol class="work-technologies">
+								<li>Express Js</li>
+								<li>Node Js</li>
+								<li>Mongo Db</li>
+								<li>Spring</li>
+								<li>Java</li>
+							</ol>
+							<div class="work-links">
+								<a href="https://www.olacabs.com/" target="_blank" rel="noopener" class="link">Ola Cabs
+									India</a>
+								<a href="https://www.olacabs.com/" target="_blank" rel="noopener" title="Ola cabs">
+									<img src="assets/images/social-links/ola-white-logo.svg" alt="Olacabs"
+										loading="lazy" />
+								</a>
+							</div>
+							<div class="work-links">
+								<a href="https://github.com/olacabs" target="_blank" rel="noopener" class="link">OlaCabs
+									OSS </a>
+								<a href="https://github.com/olacabs" target="_blank" rel="noopener"
+									title="Ola cabs oss">
+								</a>
+							</div>
+						</div>
+						<picture class="work-img">
+							<img loading="lazy" src="assets/images/work/ola-drive-homepage.png"
+								alt="ola driver onboarding international" />
+						</picture>
+					</div>
+					<div class="work-box">
+						<div class="work-textbox">
+							<h3 class="h3">Goldman Sachs</h3>
+							<p class="work-text">
+								Summer Analyst. Software Engineer Intern. Worked in Data platforms team for Private
+								Wealth Management division. Project involved building a data governance platform for
+								Hive queries.
+							</p>
+							<ol class="work-technologies">
+								<li>Springboot</li>
+								<li>Java</li>
+								<li>MongoDb</li>
+								<li>Angular Js</li>
+							</ol>
+							<div class="work-links">
+								<a href="https://www.goldmansachs.com/" target="_blank" rel="noopener"
+									class="link">Goldman Sachs</a>
+								<a href="https://www.goldmansachs.com/" target="_blank" rel="noopener"
+									title="GS Home page">
+									<img src="assets/images/social-links/goldman-sachs.png" alt="Goldman Sachs"
+										loading="lazy" />
+								</a>
+							</div>
+							<div class="work-links">
+								<a href="https://www.goldmansachs.com/" target="_blank" rel="noopener"
+									class="link">Goldman Sachs OSS</a>
+								<a href="https://github.com/goldmansachs" target="_blank" rel="noopener"
+									title="GS Opensource">
+									<img src="assets/images/social-links/github.svg" alt="GS OSS" loading="lazy" />
+								</a>
+							</div>
+						</div>
+						<picture class="work-img">
+							<img loading="lazy" src="assets/images/work/gslogo.jpeg" alt="Goldman Sachs" />
+						</picture>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="education">
+			<div class="container">
+				<h2 class="h2" id="education">Education</h2>
+				<div class="education-boxes">
+					<div class="education-box">
+						<div class="education-textbox">
+							<h3 class="h3">Indian Institute of Technology, Varanasi(BHU)</h3>
+							<p class="education-text">
+								Computer Science and Engineering, B.tech + M.Tech
+							</p>
+							<ol class="education-technologies">
+								<li>2012-2017</li>
+								<li>Gold Medal In IDD</li>
+								<li>Quantum Monks(CTF Team)</li>
+							</ol>
+
+							<div class="education-links">
+								<a href="https://www.iitbhu.ac.in/" target="_blank" rel="noopener" class="link">IIT bhu
+									homepage</a>
+								<a href="https://www.iitbhu.ac.in/" target="_blank" rel="noopener"
+									title="IIT Bhu homepage">
+
+								</a>
+							</div>
+						</div>
+						<picture class="education-img">
+							<img loading="lazy" src="assets/images/work/iit_logo_original.png" alt="IIT BHU Homepage" />
+						</picture>
+					</div>
+				</div>
+		</section>
+		<!-- 
       <section class="article">
         <div class="container">
           <h2 class="h2" id="blog">My Articles</h2>
@@ -520,143 +418,120 @@
       </section> -->
 
 
-      <section class="skills">
-        <div class="container">
-          <h2 class="h2" id="skills">My Toolkit</h2>
-          <div class="skills-imgs">
-                 <img src="assets/images/skills/typescript.webp" alt="Typescript" class="skills-img" loading="lazy" title="Typescript">
-                 <img src="assets/images/skills/shell.webp" alt="Shell" class="skills-img" loading="lazy" title="Shell">
-                 <img src="assets/images/skills/git.webp" alt="Git" class="skills-img" loading="lazy" title="Git">
-                 <img src="assets/images/skills/js.webp" alt="JavaScript" class="skills-img" loading="lazy" title="JavaScript">
-            </figure>
-          </div>
-        </div>
-      </section>
+		<section class="skills">
+			<div class="container">
+				<h2 class="h2" id="skills">My Toolkit</h2>
+				<div class="skills-imgs">
+					<img src="assets/images/skills/typescript.webp" alt="Typescript" class="skills-img" loading="lazy"
+						title="Typescript">
+					<img src="assets/images/skills/shell.webp" alt="Shell" class="skills-img" loading="lazy"
+						title="Shell">
+					<img src="assets/images/skills/git.webp" alt="Git" class="skills-img" loading="lazy" title="Git">
+					<img src="assets/images/skills/js.webp" alt="JavaScript" class="skills-img" loading="lazy"
+						title="JavaScript">
+					</figure>
+				</div>
+			</div>
+		</section>
 
-      <!-- Replace testimonials, author name, author job, img src and, alt attributes -->
+		<!-- Replace testimonials, author name, author job, img src and, alt attributes -->
 
-      <section>
-        <h2 class="h2">Quotes</h2>
-        <div class="container">
-          <ol class="testimonials">
-            <li class="testimonial">
-              <blockquote class="testimonial-text">
-                Intelligence is the ability to avoid doing work, yet getting the work done
-              </blockquote>
-              <figure class="testimonial-author">
-                <img
-                  src="assets/images/testimonials/Linus-Torvalds-2012.webp"
-                  alt="Linus torvald"
-                  loading="lazy"
-                />
-                <figcaption>
-                  <h3 class="testimonial-author-name">Linus torvald</h3>
-                  <p class="testimonial-author-job">Creator of Linux, Git</p>
-                </figcaption>
-              </figure>
-            </li>
-          </ol>
-        </div>
-      </section>
+		<section>
+			<h2 class="h2">Quotes</h2>
+			<div class="container">
+				<ol class="testimonials">
+					<li class="testimonial">
+						<blockquote class="testimonial-text">
+							Intelligence is the ability to avoid doing work, yet getting the work done
+						</blockquote>
+						<figure class="testimonial-author">
+							<img src="assets/images/testimonials/Linus-Torvalds-2012.webp" alt="Linus torvald"
+								loading="lazy" />
+							<figcaption>
+								<h3 class="testimonial-author-name">Linus torvald</h3>
+								<p class="testimonial-author-job">Creator of Linux, Git</p>
+							</figcaption>
+						</figure>
+					</li>
+				</ol>
+			</div>
+		</section>
 
-      <section class="contact">
-        <div class="container">
-          <h2 class="h2" id="contact">Send Message</h2>
-          <div class="contact-content">
-            <div class="contact-textbox">
-              <!-- Please comment this component if you're not available for hire -->
-              <strong href="#" class="hire-alert">
-                <span class="indicator"></span>
-                Available for Consultancy
-              </strong>
-              <p class="contact-text">
-                I love collaborating on deep technical challenges. I am open for remote technical consultancy and architectural design discussions.
-              </p>
-              <p class="contact-text">
-              </p>
-              <!-- Replace src with your signatures and name -->
-              <!-- <img
+		<section class="contact">
+			<div class="container">
+				<h2 class="h2" id="contact">Send Message</h2>
+				<div class="contact-content">
+					<div class="contact-textbox">
+						<!-- Please comment this component if you're not available for hire -->
+						<strong href="#" class="hire-alert">
+							<span class="indicator"></span>
+							Available for Consultancy
+						</strong>
+						<p class="contact-text">
+							I love collaborating on deep technical challenges. I am open for remote technical
+							consultancy and architectural design discussions.
+						</p>
+						<p class="contact-text">
+						</p>
+						<!-- Replace src with your signatures and name -->
+						<!-- <img
                 src="assets/images/signatures.png"
                 alt="Amitosh Anand"
                 class="signatures"
                 loading="lazy"
               /> -->
-            </div>
-            <form action="#" class="contact-form" netlify>
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required />
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  inputmode="email"
-                />
-              </div>
-              <div class="form-field">
-                <label for="message">How can I help you?</label>
-                <textarea name="message" id="message" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-cta">Send</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
+					</div>
+					<form action="#" class="contact-form" netlify>
+						<div class="form-field">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" required />
+						</div>
+						<div class="form-field">
+							<label for="email">Email</label>
+							<input type="email" name="email" id="email" required inputmode="email" />
+						</div>
+						<div class="form-field">
+							<label for="message">How can I help you?</label>
+							<textarea name="message" id="message" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-cta">Send</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <!-- Update href and src attributes -->
-          <nav>
-            <ol class="footer-links">
-              <li class="footer-link">
-                <a title="GitHub" href="https://github.com/amitex007" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/github.svg"
-                    alt="GitHub"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Codepen" href="https://github.com/amitex007" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/codepen.svg"
-                    alt="Codepen"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Linkedin" href="https://www.linkedin.com/in/amitoshanand/" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/linkedin.svg"
-                    alt="Linkedin"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Twitter" href="https://x.com/amitex007" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/twitter.svg"
-                    alt="Twitter"
-                /></a>
-              </li>
-            </ol>
-          </nav>
-          <p class="footer-text">
-            &copy; <span>2024</span> - Template inspired by <a target="_blank" rel="noopener" href="https://github.com/devsyedmohsin/portfolio-template">portfolio-template</a>
-          </p>
-          <label class="theme-switch" for="theme-switch">
-            <span>Dark Theme</span>
-            <input type="checkbox" id="theme-switch" role="switch"/>
-          </label>
-        </div>
-      </div>
-    </footer>
-  </body>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<nav>
+					<ol class="footer-links">
+						<li class="footer-link">
+							<a title="GitHub" href="https://github.com/amitex007" target="_blank" rel="noopener"><img
+									loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" /></a>
+						</li>
+						<li class="footer-link">
+							<a title="Codepen" href="https://github.com/amitex007" target="_blank" rel="noopener"><img
+									loading="lazy" src="assets/images/social-links/codepen.svg" alt="Codepen" /></a>
+						</li>
+						<li class="footer-link">
+							<a title="Linkedin" href="https://www.linkedin.com/in/amitoshanand/" target="_blank"
+								rel="noopener"><img loading="lazy" src="assets/images/social-links/linkedin.svg"
+									alt="Linkedin" /></a>
+						</li>
+						<li class="footer-link">
+							<a title="Twitter" href="https://x.com/amitex007" target="_blank" rel="noopener"><img
+									loading="lazy" src="assets/images/social-links/twitter.svg" alt="Twitter" /></a>
+						</li>
+					</ol>
+				</nav>
+				<p class="footer-text">
+					&copy; <span>2024</span> - Template inspired by <a target="_blank" rel="noopener"
+						href="https://github.com/devsyedmohsin/portfolio-template">portfolio-template</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
 </html>
