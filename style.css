@@ -422,7 +422,7 @@ main {
   position: fixed;
   width: 100%;
   top: var(--gutter-x-small);
-  left: 0;
+  left: 8%;
   z-index: 4;
 }
 
