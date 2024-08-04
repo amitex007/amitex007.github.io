@@ -85,7 +85,7 @@
 		</nav>
 
 
-		
+
 		<div class="container">
 			<div class="header-textbox">
 				<h1 class="h1">
@@ -94,7 +94,7 @@
 						<span> </span>
 						<div class="dynamic-typer"></div>
 					</div>
-					
+
 				</h1>
 				<p class="header-text">
 					Driven Software Engineer and Researcher, passionate for Science and Tech.
@@ -190,7 +190,8 @@
 							<h3 class="h3">Ola</h3>
 
 							<p class="work-text">Joined as a Software Engineer as a fresher in the Supply team. Worked
-								on scaling the onboarding platform in India and international markets like UK, AU and NZ. Worked on Auto/Bikes
+								on scaling the onboarding platform in India and international markets like UK, AU and
+								NZ. Worked on Auto/Bikes
 								onboarding through a self signup platform</p>
 							<ol class="work-technologies">
 								<li>Express Js</li>
@@ -240,8 +241,7 @@
 									class="link">Goldman Sachs</a>
 								<a href="https://www.goldmansachs.com/" target="_blank" rel="noopener"
 									title="GS Home page">
-									<img src="assets/images/work/gslogo-c.jpg" alt="Goldman Sachs"
-										loading="lazy" />
+									<img src="assets/images/work/gslogo-c.jpg" alt="Goldman Sachs" loading="lazy" />
 								</a>
 							</div>
 							<div class="work-links">
@@ -291,7 +291,7 @@
 					</div>
 				</div>
 		</section>
-     
+
 
 
 		<section class="skills">
@@ -396,7 +396,9 @@
                 loading="lazy"
               /> -->
 					</div>
-					<form action="https://script.google.com/macros/s/AKfycbz1P8fxgwLxwFqba3GgbmuCKwfWD_iaG4vn40B4Eq0oUkQFkck/exec" class="contact-form" method="POST">
+					<form id="contact-request"
+						action="https://script.google.com/macros/s/AKfycbz1P8fxgwLxwFqba3GgbmuCKwfWD_iaG4vn40B4Eq0oUkQFkck/exec"
+						class="contact-form" method="POST">
 						<div class="form-field">
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" required />
@@ -409,7 +411,17 @@
 							<label for="message">How can I help you?</label>
 							<textarea name="message" id="message" required></textarea>
 						</div>
-						<button type="submit" class="btn btn-cta">Send</button>
+						<div class="text-center" id="cvloader">
+							<div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
+	
+							</div>
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="alert alert-success" role="alert" id="successRequest">Your message has been received.
+							Please wait 24 hours for a response</div>
+						<div id="failureRequest" class="alert alert-danger" role="alert">Oops an error
+							occurred! Please refresh page and try again</div>
+						<button id="contact-submit-btn" type="submit" class="btn btn-cta">Send</button>
 					</form>
 				</div>
 			</div>
@@ -442,7 +454,8 @@
 				</nav>
 				<p class="footer-text">
 					&copy; <span>2024</span> - <a class="text-light"
-					href="mailto:amitex007@gmail.com">amitex007@gmail.com</a>  Template inspired by <a target="_blank" rel="noopener"
+						href="mailto:amitex007@gmail.com">amitex007@gmail.com</a> Template inspired by <a
+						target="_blank" rel="noopener"
 						href="https://github.com/devsyedmohsin/portfolio-template">portfolio-template</a>
 				</p>
 				<label class="theme-switch" for="theme-switch">
@@ -450,7 +463,7 @@
 					<i class="fas fa-sun"></i>
 					<input type="checkbox" id="theme-switch" role="switch" />
 					<i class="fas fa-moon"></i>
-	
+
 				</label>
 			</div>
 		</div>
@@ -458,13 +471,16 @@
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	<script>
 		var typed = new Typed(".dynamic-typer", {
-			strings: ["Engineer","Adventurer", "Musician"],
+			strings: ["Engineer", "Adventurer", "Musician"],
 			typeSpeed: 150,
 			backSpeed: 150,
 			loop: true,
 			showCursor: true
 		})
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+		integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

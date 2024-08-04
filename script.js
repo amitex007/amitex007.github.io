@@ -146,3 +146,32 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 });
 
 yearEl.textContent = new Date().getFullYear();
+
+
+$(document).ready(function(){
+  $("#successRequest").hide();
+  $("#failureRequest").hide();
+  $("#cvloader").hide();
+  $("#contact-submit-btn").show();
+
+
+  console.log('Started mapping')
+
+  $("#contact-request").submit(function(){
+    $("#contact-submit-btn").hide();
+      $("#cvloader").show();
+      $.post($(this).attr('action'), $(this).serialize(), function(response){
+          // do something here on success
+          console.log(response);
+
+          $("#cvloader").hide();
+
+          if(response.result=="success") {
+              $("#successRequest").show();
+          } else {
+              $("#failureRequest").hide();
+          }
+    },'json');
+    return false;
+  })
+});
