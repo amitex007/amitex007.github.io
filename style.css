@@ -601,8 +601,8 @@ body.light .header {
 
 .logo-head {
   position: absolute;
-  top: 2%;
-  left: 2%;
+  width: 100%;
+  top: 20%;  right: 10;
   max-block-size: 60px;
   max-inline-size: 150px;
   transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
