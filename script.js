@@ -9,6 +9,13 @@ const educationImgs = document.querySelectorAll(".education-img");
 const mainEl = document.querySelector("main");
 const yearEl = document.querySelector(".footer-text span");
 
+window.addEventListener('load', ()=>{
+  let preloader = document.getElementById('preloader');
+  preloader.classList.add('post-finish');
+})
+
+
+
 const toggleNav = () => {
   nav.classList.toggle("hidden");
 
