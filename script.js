@@ -146,3 +146,22 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 });
 
 yearEl.textContent = new Date().getFullYear();
+
+let currentDesc = document.querySelector('.dynamic-typer')
+let descriptions = ["Engineer","Adventurer", "Musician"]
+let t_index=0;
+let r_index=0;
+const typewriter = () =>{
+  let curr_word = descriptions[r_index];
+  let cur_len = curr_word.length;
+  let title = curr_word.slice(0,t_index);
+  if(++t_index>cur_len){
+    r_index++;
+    r_index%=3;
+    t_index=1;
+  }
+  currentDesc.innerHTML = title;
+  setTimeout(()=>{typewriter()}, 300)
+}
+
+typewriter()

@@ -513,7 +513,7 @@ body.dark .header {
 }
 
 body.light .header {
-  background-image: linear-gradient(#ffffffa2, #ffffffe6),
+  background-image: linear-gradient(#ffffff21, #ffffffbe),
     url("assets/images/landscape-sm.jpg");
 }
 
@@ -1431,3 +1431,11 @@ input:checked {
   --thumb-position: 100%;
   background-color: var(--track-active);
 }
+
+.type-wrapper {
+  display: inline-flex;
+}
+.dynamic-typer {
+  color: #198b3ff3;
+}
+
