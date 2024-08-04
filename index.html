@@ -90,10 +90,14 @@
 			<div class="header-textbox">
 				<h1 class="h1">
 					<span>Hi, I'm Amitosh Anand</span>
-					<span class="dynamic-typer"></span>
+					<div class="dynamic-type-wrapper">
+						<span> </span>
+						<div class="dynamic-typer"></div>
+					</div>
+					
 				</h1>
 				<p class="header-text">
-					Driven Software Engineer and Researcher who is passionate for Science and Tech
+					Driven Software Engineer and Researcher,passionate for Science and Tech
 				</p>
 
 				<div class="header-btns">
@@ -419,6 +423,16 @@
 			</div>
 		</div>
 	</footer>
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script>
+		var typed = new Typed(".dynamic-typer", {
+			strings: ["Engineer","Adventurer", "Musician"],
+			typeSpeed: 150,
+			backSpeed: 150,
+			loop: true,
+			showCursor: true
+		})
+	</script>
 </body>
 
 </html>

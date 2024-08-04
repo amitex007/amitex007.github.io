@@ -1439,3 +1439,7 @@ input:checked {
   color: #198b3ff3;
 }
 
+.dynamic-type-wrapper {
+  display: flex;
+}
+
