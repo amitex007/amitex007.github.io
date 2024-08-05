@@ -422,7 +422,7 @@ main {
   position: fixed;
   width: 100%;
   top: var(--gutter-x-small);
-  left: 8%;
+  left: 2%;
   z-index: 4;
 }
 
@@ -602,7 +602,7 @@ body.light .header {
 .logo-head {
   position: absolute;
   width: 100%;
-  top: 20%;  right: 10;
+  top: 5%;  right: 10;
   max-block-size: 60px;
   max-inline-size: 150px;
   transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
