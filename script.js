@@ -23,11 +23,11 @@ const toggleNav = () => {
   document.body.classList.toggle("lock-screen");
 
   if (nav.classList.contains("hidden")) {
-    btnToggleNav.textContent = "menu";
+    btnToggleNav.innerHTML='<i class="fas fa-bars"></i>';
   } else {
     // When menu is opened after transition change text respectively
     setTimeout(() => {
-      btnToggleNav.textContent = "close";
+      btnToggleNav.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
     }, 475);
   }
 };

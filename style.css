@@ -430,7 +430,7 @@ main {
   display: block;
   margin-inline-start: auto;
   border: 1px solid var(--border-dark);
-  inline-size: 132px;
+  inline-size: 50px;
   padding-block: var(--gutter-nano);
   border-radius: var(--gutter-large);
   text-decoration: none;
