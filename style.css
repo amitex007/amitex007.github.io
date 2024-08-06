@@ -603,10 +603,27 @@ body.light .header {
 .logo-head {
   position: absolute;
   width: 100%;
-  top: 5%;  right: 10;
+  padding: 10px;
   max-block-size: 60px;
   max-inline-size: 150px;
   transition: all 2.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (max-width: 1200px) {
+  .logo-head {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* max-width: 100%; */
+  }
+}
+
+@media (max-width: 845px) {
+  .logo-head {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 845px) {
@@ -1453,6 +1470,12 @@ input:checked {
   color: #198b3ff3;
 }
 
+@media (max-width: 845px) {
+  .dynamic-typer {
+    justify-content: center;
+  }
+}
+
 .dynamic-type-wrapper {
   display: flex;
 }
@@ -1462,7 +1485,12 @@ input:checked {
   text-align: left;
   padding-bottom: 40px;
   padding-top: 10px;
+}
 
+@media (max-width: 400px) {
+  .social-links {
+    justify-content: center;
+  }
 }
 
 .social-links a{
