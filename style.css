@@ -419,6 +419,7 @@ main {
 /* --------------------------------- */
 
 .menu-btn-container {
+  background: transparent;
   position: fixed;
   width: 100%;
   top: var(--gutter-x-small);
@@ -429,7 +430,7 @@ main {
 .menu-btn {
   display: block;
   margin-inline-start: auto;
-  border: 1px solid var(--border-dark);
+  /* border: 1px solid var(--border-dark); */
   inline-size: 50px;
   padding-block: var(--gutter-nano);
   border-radius: var(--gutter-large);
