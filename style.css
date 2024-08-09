@@ -559,6 +559,9 @@ body.light .header {
     text-align: center;
     padding-inline: 0.6rem;
   }
+}
+@media (max-width: 560px) {
+
   .header-btns {
     flex-direction: column;
     width: 80%;
@@ -1475,7 +1478,7 @@ input:checked {
 }
 
 .dynamic-type-wrapper {
-  display: flex;
+  display: inline-flex;
 }
 
 
