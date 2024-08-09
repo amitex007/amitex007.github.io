@@ -1488,9 +1488,9 @@ input:checked {
   padding-top: 10px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 560px) {
   .social-links {
-    justify-content: center;
+    text-align: center;
   }
 }
 
