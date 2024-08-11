@@ -417,6 +417,9 @@ main {
 /* --------------------------------- */
 /* ----- Menu Button -----*/
 /* --------------------------------- */
+.typed-color {
+  color: #ff335c; /* Set your desired color here */
+}
 
 .menu-btn-container {
   background: transparent;
@@ -432,12 +435,14 @@ main {
   margin-inline-start: auto;
   /* border: 1px solid var(--border-dark); */
   inline-size: 50px;
+  font-size: 30px;
   padding-block: var(--gutter-nano);
-  border-radius: var(--gutter-large);
+  /* border-radius: var(--gutter-large); */
   text-decoration: none;
-  background-color: var(--bg-color-secondary);
+  background-color: transparent;
   color: var(--important);
   cursor: pointer;
+  border: none;
 }
 
 .menu-btn,

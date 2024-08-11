@@ -27,7 +27,7 @@ const toggleNav = () => {
   } else {
     // When menu is opened after transition change text respectively
     setTimeout(() => {
-      btnToggleNav.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
+      btnToggleNav.innerHTML = '<i class="fas fa-times"></i>';
     }, 475);
   }
 };
