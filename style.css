@@ -217,6 +217,8 @@ h3,
 .container {
   max-inline-size: var(--site-max-width);
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1375px) {
@@ -399,18 +401,6 @@ main {
   :root {
     --radius: 45px;
   }
-}
-
-
-/* --------------------------------- */
-/* ----- theme Button -----*/
-/* --------------------------------- */
-
-.dark-mode-container {
-  position: absolute;
-  width: 100%;
-  top: var(--gutter-x-small);  right: 10;
-  z-index: 4;
 }
 
 
@@ -1448,6 +1438,28 @@ body.dark .footer-link img {
   transition: 500ms all cubic-bezier(0.45, 0.05, 0.22, 1.3);
 }
 
+#dark-mode-toggle {
+  display: block;
+  margin-inline-start: auto;
+  inline-size: 50px;
+  /* padding-block: var(--gutter-nano); */
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--important);
+  cursor: pointer;
+  border: none;
+  font-weight: 900;
+}
+
+#toggle-icon {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+
+.dark-selection{
+  color:#888888;
+}
 input:checked {
   --thumb-position: 100%;
   background-color: var(--track-active);

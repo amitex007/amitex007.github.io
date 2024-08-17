@@ -9,7 +9,7 @@ const educationImgs = document.querySelectorAll(".education-img");
 const mainEl = document.querySelector("main");
 const yearEl = document.querySelector(".footer-text span");
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
   let preloader = document.getElementById('preloader');
   preloader.classList.add('post-finish');
 })
@@ -23,7 +23,7 @@ const toggleNav = () => {
   document.body.classList.toggle("lock-screen");
 
   if (nav.classList.contains("hidden")) {
-    btnToggleNav.innerHTML='<i class="fas fa-bars"></i>';
+    btnToggleNav.innerHTML = '<i class="fas fa-bars"></i>';
   } else {
     // When menu is opened after transition change text respectively
     setTimeout(() => {
@@ -90,7 +90,7 @@ let educobserver = new IntersectionObserver(
 educationEls.forEach((eduEl) => {
   educobserver.observe(eduEl);
 })
-;
+  ;
 
 // Toggle theme and store user preferred theme for future
 
@@ -113,6 +113,54 @@ switchThemeEl.addEventListener("click", () => {
     localStorage.setItem("theme", "dark");
   }
 });
+
+// // Toggle theme and store user preferred theme for future
+
+// const switchThemeE2 = document.querySelector('input[type="checkbox"]');
+
+const darkToggleButton = document.getElementById('dark-mode-toggle');
+const toggleIcon = document.getElementById('toggle-icon');
+
+
+console.log('storedTheme', storedTheme);
+let themeToggleState = storedTheme === "dark" || storedTheme === null;
+
+if (themeToggleState) {
+  toggleIcon.classList.remove('fa-sun');
+  toggleIcon.classList.add('fa-moon');
+  localStorage.setItem("theme", "dark");
+} else {
+  toggleIcon.classList.remove('fa-moon');
+  toggleIcon.classList.add('fa-sun');
+}
+
+darkToggleButton.addEventListener('click', () => {
+  if (themeToggleState) {
+    console.log('dark');
+    toggleIcon.classList.remove('fa-moon');
+    toggleIcon.classList.add('fa-sun');
+    
+
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    localStorage.setItem("theme", "light");
+    switchThemeEl.checked = false;
+    themeToggleState = false;
+  } else {
+    console.log('light', storedTheme);
+    toggleIcon.classList.remove('fa-sun');
+    toggleIcon.classList.add('fa-moon');
+    toggleIcon.classList.add('dark-selection');
+
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    localStorage.setItem("theme", "dark");
+    switchThemeEl.checked = true;
+    themeToggleState = true;
+
+  }
+}
+);
 
 // Trap the tab when menu is opened
 
@@ -148,7 +196,7 @@ logosWrappers.forEach(async (logoWrapper, i) => {
 yearEl.textContent = new Date().getFullYear();
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   $("#successRequest").hide();
   $("#failureRequest").hide();
   $("#cvloader").hide();
@@ -157,21 +205,21 @@ $(document).ready(function(){
 
   console.log('Started mapping')
 
-  $("#contact-request").submit(function(){
+  $("#contact-request").submit(function () {
     $("#contact-submit-btn").hide();
-      $("#cvloader").show();
-      $.post($(this).attr('action'), $(this).serialize(), function(response){
-          // do something here on success
-          console.log(response);
+    $("#cvloader").show();
+    $.post($(this).attr('action'), $(this).serialize(), function (response) {
+      // do something here on success
+      console.log(response);
 
-          $("#cvloader").hide();
+      $("#cvloader").hide();
 
-          if(response.result=="success") {
-              $("#successRequest").show();
-          } else {
-              $("#failureRequest").hide();
-          }
-    },'json');
+      if (response.result == "success") {
+        $("#successRequest").show();
+      } else {
+        $("#failureRequest").hide();
+      }
+    }, 'json');
     return false;
   })
 });
