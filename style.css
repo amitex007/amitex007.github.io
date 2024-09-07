@@ -548,7 +548,7 @@ body.light .header {
   gap: var(--gutter-x-small);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 580px) {
   .header-textbox {
     left: 0;
     text-align: center;
@@ -616,7 +616,7 @@ body.light .header {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 580px) {
   .logo {
     max-inline-size: 85px;
   }
