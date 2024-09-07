@@ -15,6 +15,8 @@ window.addEventListener('load', () => {
 })
 
 
+const lightThemeClassIcon = "fa-sun"
+const darkThemeClassIcon = "fa-lightbulb"
 
 const toggleNav = () => {
   nav.classList.toggle("hidden");
@@ -99,46 +101,26 @@ const storedTheme = localStorage.getItem("theme");
 
 switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
 
-switchThemeEl.addEventListener("click", () => {
-  const isChecked = switchThemeEl.checked;
-
-  if (!isChecked) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-    localStorage.setItem("theme", "light");
-    switchThemeEl.checked = false;
-  } else {
-    document.body.classList.add("dark");
-    document.body.classList.remove("light");
-    localStorage.setItem("theme", "dark");
-  }
-});
-
-// // Toggle theme and store user preferred theme for future
-
-// const switchThemeE2 = document.querySelector('input[type="checkbox"]');
 
 const darkToggleButton = document.getElementById('dark-mode-toggle');
 const toggleIcon = document.getElementById('toggle-icon');
 
 
-console.log('storedTheme', storedTheme);
 let themeToggleState = storedTheme === "dark" || storedTheme === null;
 
 if (themeToggleState) {
-  toggleIcon.classList.remove('fa-sun');
-  toggleIcon.classList.add('fa-moon');
+  toggleIcon.classList.remove(lightThemeClassIcon);
+  toggleIcon.classList.add(darkThemeClassIcon);
   localStorage.setItem("theme", "dark");
 } else {
-  toggleIcon.classList.remove('fa-moon');
-  toggleIcon.classList.add('fa-sun');
+  toggleIcon.classList.remove(darkThemeClassIcon);
+  toggleIcon.classList.add(lightThemeClassIcon);
 }
 
-darkToggleButton.addEventListener('click', () => {
+const themeToggleHandler = () => {
   if (themeToggleState) {
-    console.log('dark');
-    toggleIcon.classList.remove('fa-moon');
-    toggleIcon.classList.add('fa-sun');
+    toggleIcon.classList.remove(darkThemeClassIcon);
+    toggleIcon.classList.add(lightThemeClassIcon);
     
 
     document.body.classList.remove("dark");
@@ -147,9 +129,8 @@ darkToggleButton.addEventListener('click', () => {
     switchThemeEl.checked = false;
     themeToggleState = false;
   } else {
-    console.log('light', storedTheme);
-    toggleIcon.classList.remove('fa-sun');
-    toggleIcon.classList.add('fa-moon');
+    toggleIcon.classList.remove(lightThemeClassIcon);
+    toggleIcon.classList.add(darkThemeClassIcon);
     toggleIcon.classList.add('dark-selection');
 
     document.body.classList.add("dark");
@@ -160,7 +141,10 @@ darkToggleButton.addEventListener('click', () => {
 
   }
 }
-);
+
+darkToggleButton.addEventListener('click',themeToggleHandler);
+switchThemeEl.addEventListener("click",themeToggleHandler);
+
 
 // Trap the tab when menu is opened
 
@@ -209,7 +193,6 @@ $(document).ready(function () {
     $("#contact-submit-btn").hide();
     $("#cvloader").show();
     $.post($(this).attr('action'), $(this).serialize(), function (response) {
-      // do something here on success
       console.log(response);
 
       $("#cvloader").hide();

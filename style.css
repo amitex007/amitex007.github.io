@@ -425,7 +425,7 @@ main {
   margin-inline-start: auto;
   /* border: 1px solid var(--border-dark); */
   inline-size: 50px;
-  font-size: 30px;
+  font-size: 25px;
   padding-block: var(--gutter-nano);
   /* border-radius: var(--gutter-large); */
   text-decoration: none;
