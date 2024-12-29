@@ -938,6 +938,61 @@ body.dark .education-links img {
   }
 }
 
+/* updated changes for education image */
+.education-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1045px) {
+  .education-boxes {
+    max-inline-size: fit-content;
+    margin-inline: auto;
+  }
+
+  .education-box {
+    flex-direction: column-reverse;
+    align-items: center; /* Center align on mobile */
+  }
+
+  .education-img {
+    margin-block-end: var(--gutter-medium);
+    margin-inline: auto; /* Center the image */
+  }
+
+  .education-textbox {
+    text-align: center; /* Center the text for better alignment on mobile */
+  }
+}
+
+/* Additional styling for very small screens */
+@media (max-width: 485px) {
+  .education-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-img {
+    margin-inline: auto; /* Ensure the image stays centered */
+    margin-block-end: var(--gutter-medium);
+  }
+
+  .education-textbox {
+    text-align: center; /* Keep text centered on very small screens */
+  }
+}
+
+.education-img {
+  max-inline-size: 300px;
+  transition: 0.6s all;
+  box-shadow: none; /* Remove shadow */
+}
+
+body.light .education-img {
+  box-shadow: none; /* Ensure shadow is removed for the light theme */
+}
+
 /* --------------------------------- */
 /* ----- Articles -----*/
 /* --------------------------------- */
