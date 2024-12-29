@@ -1544,7 +1544,7 @@ input:checked {
   padding-top: 10px;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 580px) {
   .social-links {
     text-align: center;
   }
