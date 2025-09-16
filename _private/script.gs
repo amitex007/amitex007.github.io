@@ -18,14 +18,15 @@ function validateRecaptcha(recaptchaResponse) {
   
   try {
     var url = "https://www.google.com/recaptcha/api/siteverify";
-    var payload = {
-      'secret': RECAPTCHA_SECRET_KEY,
-      'response': recaptchaResponse
-    };
+    
+    // Manually encode the payload as form data
+    var payload = 'secret=' + encodeURIComponent(RECAPTCHA_SECRET_KEY) + 
+                  '&response=' + encodeURIComponent(recaptchaResponse);
     
     var options = {
       'method': 'POST',
-      'payload': payload
+      'payload': payload,
+      'contentType': 'application/x-www-form-urlencoded'
     };
     
     var response = UrlFetchApp.fetch(url, options);
