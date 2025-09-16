@@ -191,38 +191,35 @@ $(document).ready(function () {
   $("#contact-request").submit(function (e) {
     e.preventDefault();
     
-    // Validate CAPTCHA
-    var recaptchaResponse = grecaptcha.getResponse();
-    if (recaptchaResponse.length === 0) {
-      alert("Please complete the CAPTCHA verification.");
-      return false;
-    }
-    
     $("#contact-submit-btn").hide();
     $("#cvloader").show();
     
-    // Include CAPTCHA response in form data
-    var formData = $(this).serialize() + "&g-recaptcha-response=" + recaptchaResponse;
-    
-    $.post($(this).attr('action'), formData, function (response) {
-      console.log(response);
+    // Generate reCAPTCHA v3 token
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LeFgcsrAAAAABiX-wOC7ew4OTrJ543Mcilauq9l', {action: 'contact_form'}).then(function(token) {
+        // Set the token in the hidden input
+        $('#recaptcha-token').val(token);
+        
+        // Submit the form with the token
+        var formData = $("#contact-request").serialize();
+        
+        $.post($("#contact-request").attr('action'), formData, function (response) {
+          console.log(response);
 
-      $("#cvloader").hide();
+          $("#cvloader").hide();
 
-      if (response.result == "success") {
-        $("#successRequest").show();
-        // Reset form and CAPTCHA
-        $("#contact-request")[0].reset();
-        grecaptcha.reset();
-      } else {
-        $("#failureRequest").show();
-        // Reset CAPTCHA on failure
-        grecaptcha.reset();
-      }
-    }, 'json').fail(function() {
-      $("#cvloader").hide();
-      $("#failureRequest").show();
-      grecaptcha.reset();
+          if (response.result == "success") {
+            $("#successRequest").show();
+            // Reset form
+            $("#contact-request")[0].reset();
+          } else {
+            $("#failureRequest").show();
+          }
+        }, 'json').fail(function() {
+          $("#cvloader").hide();
+          $("#failureRequest").show();
+        });
+      });
     });
     
     return false;
