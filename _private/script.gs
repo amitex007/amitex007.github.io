@@ -7,10 +7,10 @@
 // if you want to store your email server-side (hidden), uncomment the next line
 var TO_ADDRESS = "amitosh.iitbhu@gmail.com";
 
-// reCAPTCHA secret key - replace with your actual secret key
+// reCAPTCHA v3 secret key - replace with your actual secret key
 var RECAPTCHA_SECRET_KEY = "YOUR_RECAPTCHA_SECRET_KEY";
 
-// Validate reCAPTCHA response
+// Validate reCAPTCHA v3 response with score checking
 function validateRecaptcha(recaptchaResponse) {
   if (!recaptchaResponse || recaptchaResponse.length === 0) {
     return false;
@@ -31,9 +31,20 @@ function validateRecaptcha(recaptchaResponse) {
     var response = UrlFetchApp.fetch(url, options);
     var responseData = JSON.parse(response.getContentText());
     
-    Logger.log("reCAPTCHA validation response: " + JSON.stringify(responseData));
+    Logger.log("reCAPTCHA v3 validation response: " + JSON.stringify(responseData));
     
-    return responseData.success === true;
+    // For reCAPTCHA v3, check both success and score
+    // Score ranges from 0.0 (likely bot) to 1.0 (likely human)
+    // You can adjust the threshold based on your needs
+    var scoreThreshold = 0.5;
+    
+    if (responseData.success === true && responseData.score >= scoreThreshold) {
+      Logger.log("reCAPTCHA v3 validation passed with score: " + responseData.score);
+      return true;
+    } else {
+      Logger.log("reCAPTCHA v3 validation failed. Score: " + responseData.score + ", Threshold: " + scoreThreshold);
+      return false;
+    }
   } catch (error) {
     Logger.log("reCAPTCHA validation error: " + error.toString());
     return false;

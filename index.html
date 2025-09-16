@@ -423,7 +423,7 @@
               /> -->
 					</div>
 					<form id="contact-request"
-						action="https://script.google.com/macros/s/AKfycbxES8EQJYqHtpdRHv8p9IDlxXWkb4_SUiENKXWe8uYTyn_W4ElfvO9vLPuu1NcGjdDe/exec"
+						action="https://script.google.com/macros/s/AKfycbw83Y-rRXLtPumBeoP9VfKY0Yd_Vsj61XeEMThp9mgNEG1rFB0pzVCBm7tnk1CgIbwh/exec"
 						class="contact-form" method="POST">
 						<div class="form-field">
 							<label for="name">Name</label>
@@ -438,7 +438,7 @@
 							<textarea name="message" id="message" required></textarea>
 						</div>
 						<div class="form-field">
-							<div class="g-recaptcha" data-sitekey="6LeFgcsrAAAAABiX-wOC7ew4OTrJ543Mcilauq9l"></div>
+							<input type="hidden" id="recaptcha-token" name="g-recaptcha-response">
 						</div>
 						<div class="text-center" id="cvloader">
 							<div class="spinner-border text-info" style="width: 3rem; height: 3rem;" role="status">
@@ -510,7 +510,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 		integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
 		crossorigin="anonymous"></script>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LeFgcsrAAAAABiX-wOC7ew4OTrJ543Mcilauq9l"></script>
 </body>
 
 </html>
