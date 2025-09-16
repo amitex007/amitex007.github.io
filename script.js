@@ -186,23 +186,45 @@ $(document).ready(function () {
   $("#cvloader").hide();
   $("#contact-submit-btn").show();
 
-
   console.log('Started mapping')
 
-  $("#contact-request").submit(function () {
+  $("#contact-request").submit(function (e) {
+    e.preventDefault();
+    
+    // Validate CAPTCHA
+    var recaptchaResponse = grecaptcha.getResponse();
+    if (recaptchaResponse.length === 0) {
+      alert("Please complete the CAPTCHA verification.");
+      return false;
+    }
+    
     $("#contact-submit-btn").hide();
     $("#cvloader").show();
-    $.post($(this).attr('action'), $(this).serialize(), function (response) {
+    
+    // Include CAPTCHA response in form data
+    var formData = $(this).serialize() + "&g-recaptcha-response=" + recaptchaResponse;
+    
+    $.post($(this).attr('action'), formData, function (response) {
       console.log(response);
 
       $("#cvloader").hide();
 
       if (response.result == "success") {
         $("#successRequest").show();
+        // Reset form and CAPTCHA
+        $("#contact-request")[0].reset();
+        grecaptcha.reset();
       } else {
-        $("#failureRequest").hide();
+        $("#failureRequest").show();
+        // Reset CAPTCHA on failure
+        grecaptcha.reset();
       }
-    }, 'json');
+    }, 'json').fail(function() {
+      $("#cvloader").hide();
+      $("#failureRequest").show();
+      grecaptcha.reset();
+    });
+    
     return false;
   })
 });
