@@ -1520,3 +1520,27 @@ input:checked {
   100% { transform: rotate(360deg); }
 }
 
+/* CAPTCHA Styling */
+.g-recaptcha {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.g-recaptcha > div {
+  margin: 0 auto;
+}
+
+/* Dark theme CAPTCHA adjustments */
+.dark .g-recaptcha {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Responsive CAPTCHA */
+@media (max-width: 480px) {
+  .g-recaptcha {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}
+
