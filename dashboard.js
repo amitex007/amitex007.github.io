@@ -1,5 +1,49 @@
 const DASHBOARD_API_URL = 'https://amitosh.dev/api/dashboard';
 
+const DEMO_DATA = {
+  currentlyReading: {
+    title: "Designing Data-Intensive Applications",
+    author: "Martin Kleppmann",
+    genre: "Technology",
+    progress: 68,
+    coverUrl: "https://m.media-amazon.com/images/I/91pzJBWW+RL._AC_UF1000,1000_QL80_.jpg",
+    link: "https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications"
+  },
+  currentlyListening: {
+    track: "Fear Inoculum",
+    artist: "Tool",
+    album: "Fear Inoculum",
+    albumArt: "https://upload.wikimedia.org/wikipedia/en/8/8f/Tool_-_Fear_Inoculum.png",
+    isPlaying: true,
+    link: "https://open.spotify.com/album/7acEciVtnuTzmwKptkjth5"
+  },
+  currentlyPlaying: {
+    title: "Elden Ring",
+    platform: "PC (Steam)",
+    hoursPlayed: 156,
+    coverUrl: "https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg",
+    achievement: "Elden Lord",
+    link: "https://store.steampowered.com/app/1245620/ELDEN_RING/"
+  },
+  currentlyLearning: {
+    topic: "Rust Programming",
+    platform: "Udemy",
+    instructor: "Herbert Wolverson",
+    progress: 45,
+    link: "https://www.udemy.com/course/ultimate-rust-crash-course/"
+  },
+  stats: {
+    booksReadThisYear: 12,
+    githubContributions: 847,
+    hoursOfMusic: 1234,
+    projectsCompleted: 8
+  },
+  quote: {
+    text: "The best way to predict the future is to invent it.",
+    author: "Alan Kay"
+  }
+};
+
 const nav = document.querySelector(".nav");
 const navMenu = document.querySelector(".nav-items");
 const btnToggleNav = document.querySelector(".menu-btn");
@@ -110,6 +154,9 @@ async function loadDashboardData() {
   const existingCards = contentEl.querySelectorAll('.dashboard-card');
   existingCards.forEach(card => card.remove());
 
+  const demoBannerExists = contentEl.querySelector('.demo-banner');
+  if (demoBannerExists) demoBannerExists.remove();
+
   try {
     const response = await fetch(DASHBOARD_API_URL);
     
@@ -123,9 +170,15 @@ async function loadDashboardData() {
     renderDashboard(data);
     
   } catch (error) {
-    console.error('Failed to load dashboard data:', error);
+    console.error('Failed to load dashboard data, using demo data:', error);
     loadingEl.style.display = 'none';
-    errorEl.style.display = 'flex';
+    
+    const demoBanner = document.createElement('div');
+    demoBanner.className = 'demo-banner';
+    demoBanner.innerHTML = '<i class="fas fa-info-circle"></i> Showing demo data. Live data will appear when API is available.';
+    contentEl.insertBefore(demoBanner, contentEl.firstChild);
+    
+    renderDashboard(DEMO_DATA);
   }
 }
 

@@ -1985,3 +1985,21 @@ input:checked {
   margin-block-start: var(--gutter-micro);
 }
 
+.demo-banner {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gutter-nano);
+  padding: var(--gutter-micro) var(--gutter-small);
+  background: linear-gradient(90deg, #f59e0b20, #f59e0b10);
+  border: 1px solid #f59e0b40;
+  border-radius: var(--gutter-nano);
+  color: var(--important);
+  font-size: var(--text-small);
+}
+
+.demo-banner i {
+  color: #f59e0b;
+}
+
