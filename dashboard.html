@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6HBB9VCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NV6HBB9VCB');
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <meta name="description" content="Dashboard - See what Amitosh is currently reading, listening to, and more." />
+
+  <meta itemprop="name" content="Amitosh Anand - Dashboard">
+  <meta itemprop="description" content="Dashboard - See what Amitosh is currently reading, listening to, and more.">
+
+  <meta property="og:url" content="https://amitoshanand.com/dashboard">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amitosh Anand - Dashboard">
+  <meta property="og:description" content="Dashboard - See what Amitosh is currently reading, listening to, and more.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amitosh Anand - Dashboard">
+  <meta name="twitter:description" content="Dashboard - See what Amitosh is currently reading, listening to, and more.">
+
+  <link rel="shortcut icon" href="assets/images/favicons.png" type="image/png" />
+  <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="script.js" defer></script>
+  <script src="dashboard.js" defer></script>
+
+  <title>Dashboard - Amitosh Anand</title>
+</head>
+
+<body>
+  <script>
+    const theme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(theme);
+  </script>
+
+  <header class="dashboard-header">
+    <div class="menu-btn-container">
+      <div class="container">
+        <button type="button" class="menu-btn"><i class="fas fa-bars"></i></button>
+        <button id="dark-mode-toggle"><i id="toggle-icon" class="fa-solid fa-lightbulb"></i></button>
+      </div>
+    </div>
+
+    <nav class="nav hidden">
+      <ol class="nav-items">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="index.html#work">My Work</a></li>
+        <li class="nav-item"><a href="index.html#skills">My Skills</a></li>
+        <li class="nav-item"><a href="#" class="active">Dashboard</a></li>
+        <li class="nav-item">
+          <a href="index.html#contact" data-focused="last-focused">Contact</a>
+        </li>
+      </ol>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="container">
+      <div class="dashboard-hero">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        <h1 class="h1 dashboard-title">Dashboard</h1>
+        <p class="dashboard-subtitle">What I'm currently up to</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Currently Listening Card -->
+        <div class="dashboard-card listening-card" id="listening-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-headphones"></i>
+            </div>
+            <h2 class="card-title">Currently Listening</h2>
+            <div class="status-indicator" id="playing-status">
+              <span class="pulse"></span>
+              <span class="status-text">Live</span>
+            </div>
+          </div>
+          <div class="card-content" id="listening-content">
+            <div class="loading-state">
+              <div class="spinner"></div>
+              <p>Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Currently Reading Card -->
+        <div class="dashboard-card reading-card" id="reading-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h2 class="card-title">Currently Reading</h2>
+          </div>
+          <div class="card-content" id="reading-content">
+            <div class="loading-state">
+              <div class="spinner"></div>
+              <p>Loading...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-footer">
+        <p class="last-updated" id="last-updated">
+          <i class="fas fa-clock"></i>
+          <span>Fetching latest data...</span>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <nav>
+          <ol class="footer-links">
+            <li class="footer-link">
+              <a title="GitHub" href="https://github.com/amitex007" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" />
+              </a>
+            </li>
+            <li class="footer-link">
+              <a title="Linkedin" href="https://www.linkedin.com/in/amitoshanand/" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/images/social-links/linkedin.svg" alt="Linkedin" />
+              </a>
+            </li>
+            <li class="footer-link">
+              <a title="Twitter" href="https://x.com/amitex007" target="_blank" rel="noopener">
+                <img loading="lazy" src="assets/images/social-links/twitter.svg" alt="Twitter" />
+              </a>
+            </li>
+          </ol>
+        </nav>
+        <p class="footer-text">
+          &copy; <span>2024</span> - <a class="text-light" href="mailto:connect@amitoshanand.com">connect@amitoshanand.com</a>
+        </p>
+        <label class="theme-switch" for="theme-switch">
+          <i class="fas fa-sun"></i>
+          <input type="checkbox" id="theme-switch" role="switch" />
+          <i class="fas fa-moon"></i>
+        </label>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
