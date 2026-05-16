@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV6HBB9VCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NV6HBB9VCB');
+  </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+  <meta name="description"
+    content="Dashboard - What I'm currently reading, listening to, and more." />
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="Amitosh Anand - Dashboard">
+  <meta itemprop="description"
+    content="Dashboard - What I'm currently reading, listening to, and more.">
+  <meta itemprop="image" content="assets/images/sharing-card.png">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://amitoshanand.com/dashboard">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amitosh Anand - Dashboard">
+  <meta property="og:description"
+    content="Dashboard - What I'm currently reading, listening to, and more.">
+  <meta property="og:image" content="assets/images/sharing-card.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amitosh Anand - Dashboard">
+  <meta name="twitter:description"
+    content="Dashboard - What I'm currently reading, listening to, and more.">
+  <meta name="twitter:image" content="assets/images/sharing-card.png">
+
+  <link rel="shortcut icon" href="assets/images/favicons.png" type="image/png" />
+  <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <title>Dashboard - Amitosh Anand</title>
+</head>
+
+<body>
+  <div id="preloader"></div>
+
+  <script>
+    const theme = localStorage.getItem("theme") || "dark";
+    document.body.classList.add(theme);
+  </script>
+
+  <header class="header dashboard-header">
+    <div class="menu-btn-container">
+      <div class="container">
+        <button type="button" class="menu-btn"><i class="fas fa-bars"></i></button>
+        <button id="dark-mode-toggle"><i id="toggle-icon" class="fa-solid fa-lightbulb"></i></button>
+      </div>
+    </div>
+
+    <nav class="nav hidden">
+      <ol class="nav-items">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="index.html#work">My Work</a></li>
+        <li class="nav-item"><a href="index.html#skills">My Skills</a></li>
+        <li class="nav-item"><a href="#" class="active">Dashboard</a></li>
+        <li class="nav-item">
+          <a href="index.html#contact" data-focused="last-focused">Contact</a>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="container">
+      <div class="header-textbox dashboard-header-textbox">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+        <h1 class="h1">
+          <span>Dashboard</span>
+        </h1>
+        <p class="header-text">
+          A glimpse into what I'm currently exploring, reading, listening to, and working on.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="dashboard-grid" id="dashboard-content">
+          <!-- Loading State -->
+          <div class="dashboard-loading" id="dashboard-loading">
+            <div class="loading-spinner"></div>
+            <p>Loading dashboard data...</p>
+          </div>
+
+          <!-- Error State -->
+          <div class="dashboard-error" id="dashboard-error" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <p>Unable to load dashboard data. Please try again later.</p>
+            <button class="btn btn-secondary" onclick="loadDashboardData()">Retry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <nav>
+          <ol class="footer-links">
+            <li class="footer-link">
+              <a title="GitHub" href="https://github.com/amitex007" target="_blank" rel="noopener"><img
+                  loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" /></a>
+            </li>
+            <li class="footer-link">
+              <a title="Linkedin" href="https://www.linkedin.com/in/amitoshanand/" target="_blank"
+                rel="noopener"><img loading="lazy" src="assets/images/social-links/linkedin.svg"
+                  alt="Linkedin" /></a>
+            </li>
+            <li class="footer-link">
+              <a title="Twitter" href="https://x.com/amitex007" target="_blank" rel="noopener"><img
+                  loading="lazy" src="assets/images/social-links/twitter.svg" alt="Twitter" /></a>
+            </li>
+          </ol>
+        </nav>
+        <p class="footer-text">
+          &copy; <span id="footer-year">2024</span> - <a class="text-light"
+            href="mailto:connect@amitoshanand.com">connect@amitoshanand.com</a>
+        </p>
+        <label class="theme-switch" for="theme-switch">
+          <i class="fas fa-sun"></i>
+          <input type="checkbox" id="theme-switch" role="switch" />
+          <i class="fas fa-moon"></i>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
