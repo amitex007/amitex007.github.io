@@ -80,7 +80,9 @@ let educobserver = new IntersectionObserver(
     const [entry] = entries;
     const [textbox, picture] = Array.from(entry.target.children);
     if (entry.isIntersecting) {
-      picture.classList.remove("transform");
+      if (picture) {
+        picture.classList.remove("transform");
+      }
       Array.from(textbox.children).forEach(
         (el) => (el.style.animationPlayState = "running")
       );
