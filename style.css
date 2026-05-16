@@ -256,6 +256,7 @@ h3,
 .hidden {
   visibility: hidden;
   transform: translateX(-100%);
+  pointer-events: none;
 }
 
 .transform {
@@ -1611,6 +1612,13 @@ input:checked {
   top: 40%;
 }
 
+.dashboard-top-bar {
+  position: relative;
+  z-index: 5;
+  padding-block-start: 5.5rem;
+  padding-block-end: 0;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -1618,11 +1626,18 @@ input:checked {
   color: var(--sub);
   text-decoration: none;
   font-size: var(--text-small);
-  margin-block-end: var(--gutter-small);
+  margin-block-end: 0;
+  padding: 0.75rem 0;
+  min-height: 44px;
+  position: relative;
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   transition: color 0.3s ease;
 }
 
-.back-link:hover {
+.back-link:hover,
+.back-link:focus-visible {
   color: var(--important);
 }
 
@@ -1632,18 +1647,73 @@ input:checked {
 
 .dashboard-section {
   padding-block: var(--gutter-x-large);
+  overflow-x: clip;
 }
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--gutter-medium);
   padding-block-start: var(--gutter-small);
+  width: 100%;
+  min-width: 0;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 640px) {
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    min-block-size: auto;
+    padding-block-end: var(--gutter-medium);
+  }
+
+  .dashboard-header-textbox {
+    position: relative;
+    top: auto;
+    transform: none;
+    text-align: center;
+    padding-block-start: var(--gutter-small);
+  }
+
+  .dashboard-top-bar {
+    padding-block-start: 4.75rem;
+  }
+
+  .dashboard-section {
+    padding-block: var(--gutter-large);
+  }
+
+  .dashboard-card {
+    padding: var(--gutter-small);
+  }
+
+  .card-title,
+  .card-subtitle,
+  .card-album,
+  .card-instructor {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .card-media {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-quote {
+    font-size: 1.05rem;
+    padding: var(--gutter-micro);
+  }
+
+  .stat-value {
+    font-size: 1.6rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -2001,5 +2071,13 @@ input:checked {
 
 .demo-banner i {
   color: #f59e0b;
+}
+
+.dashboard-updated-at {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--sub);
+  margin-block-start: var(--gutter-micro);
 }
 

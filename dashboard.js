@@ -10,38 +10,32 @@ const DEMO_DATA = {
     link: "https://www.goodreads.com/book/show/23463279-designing-data-intensive-applications"
   },
   currentlyListening: {
-    track: "Fear Inoculum",
-    artist: "Tool",
-    album: "Fear Inoculum",
-    albumArt: "https://upload.wikimedia.org/wikipedia/en/8/8f/Tool_-_Fear_Inoculum.png",
+    track: "Drive Home",
+    artist: "Steven Wilson",
+    album: "The Raven That Refused to Sing (and Other Stories)",
+    albumArtUrl: "https://i.scdn.co/image/ab67616d0000b273957ae146a564181e7bbbfbd2",
     isPlaying: true,
-    link: "https://open.spotify.com/album/7acEciVtnuTzmwKptkjth5"
+    trackUrl: "https://open.spotify.com/track/4kZbYkUuDHyphD71bPMYL1"
   },
   currentlyPlaying: {
-    title: "Elden Ring",
-    platform: "PC (Steam)",
-    hoursPlayed: 156,
-    coverUrl: "https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg",
-    achievement: "Elden Lord",
-    link: "https://store.steampowered.com/app/1245620/ELDEN_RING/"
+    title: "Horizon Zero Dawn",
+    hoursPlayed: 2,
+    platform: "PS5"
   },
   currentlyLearning: {
-    topic: "Rust Programming",
-    platform: "Udemy",
-    instructor: "Herbert Wolverson",
-    progress: 45,
-    link: "https://www.udemy.com/course/ultimate-rust-crash-course/"
+    topic: "RL",
+    platform: "",
+    progress: 1
   },
   stats: {
-    booksReadThisYear: 12,
-    githubContributions: 847,
-    hoursOfMusic: 1234,
-    projectsCompleted: 8
+    booksReadThisYear: 3,
+    githubContributions: 24
   },
   quote: {
-    text: "The best way to predict the future is to invent it.",
-    author: "Alan Kay"
-  }
+    text: "The only way to do great work is to love what you do.",
+    author: "Steve Jobs"
+  },
+  updatedAt: new Date().toISOString()
 };
 
 const nav = document.querySelector(".nav");
@@ -60,6 +54,7 @@ const darkThemeClassIcon = "fa-lightbulb";
 
 const toggleNav = () => {
   nav.classList.toggle("hidden");
+  nav.setAttribute("aria-hidden", nav.classList.contains("hidden") ? "true" : "false");
   document.body.classList.toggle("lock-screen");
 
   if (nav.classList.contains("hidden")) {
@@ -151,8 +146,7 @@ async function loadDashboardData() {
   loadingEl.style.display = 'flex';
   errorEl.style.display = 'none';
 
-  const existingCards = contentEl.querySelectorAll('.dashboard-card');
-  existingCards.forEach(card => card.remove());
+  contentEl.querySelectorAll('.dashboard-card, .dashboard-updated-at').forEach(el => el.remove());
 
   const demoBannerExists = contentEl.querySelector('.demo-banner');
   if (demoBannerExists) demoBannerExists.remove();
@@ -216,6 +210,34 @@ function renderDashboard(data) {
   if (data.quote) {
     contentEl.appendChild(createQuoteCard(data.quote));
   }
+
+  if (data.updatedAt) {
+    contentEl.appendChild(createUpdatedAtEl(data.updatedAt));
+  }
+}
+
+function pickField(obj, ...keys) {
+  for (const key of keys) {
+    const value = obj[key];
+    if (value !== undefined && value !== null && value !== "") {
+      return value;
+    }
+  }
+  return null;
+}
+
+function createUpdatedAtEl(updatedAt) {
+  const el = document.createElement("p");
+  el.className = "dashboard-updated-at";
+  const date = new Date(updatedAt);
+  const formatted = Number.isNaN(date.getTime())
+    ? updatedAt
+    : date.toLocaleString(undefined, {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+  el.textContent = `Last updated ${formatted}`;
+  return el;
 }
 
 function createBookCard(book) {
@@ -266,8 +288,11 @@ function createMusicCard(music) {
   card.className = 'dashboard-card music-card';
   
   let coverHtml = '';
-  if (music.albumArt) {
-    coverHtml = `<img src="${escapeHtml(music.albumArt)}" alt="${escapeHtml(music.album || music.track)} cover" class="card-cover" />`;
+  const albumArt = pickField(music, 'albumArtUrl', 'albumArt');
+  const trackUrl = pickField(music, 'trackUrl', 'link');
+
+  if (albumArt) {
+    coverHtml = `<img src="${escapeHtml(albumArt)}" alt="${escapeHtml(music.album || music.track)} cover" class="card-cover" />`;
   } else {
     coverHtml = `<div class="card-cover-placeholder"><i class="fas fa-music"></i></div>`;
   }
@@ -293,7 +318,7 @@ function createMusicCard(music) {
         </div>
       </div>
     </div>
-    ${music.link ? `<a href="${escapeHtml(music.link)}" target="_blank" rel="noopener" class="card-link">Listen on Spotify <i class="fas fa-external-link-alt"></i></a>` : ''}
+    ${trackUrl ? `<a href="${escapeHtml(trackUrl)}" target="_blank" rel="noopener" class="card-link">Listen on Spotify <i class="fas fa-external-link-alt"></i></a>` : ''}
   `;
   
   return card;
@@ -349,8 +374,9 @@ function createGamingCard(game) {
   }
   
   let hoursHtml = '';
-  if (game.hoursPlayed !== undefined) {
-    hoursHtml = `<span class="card-stat"><i class="fas fa-clock"></i> ${game.hoursPlayed} hours</span>`;
+  if (game.hoursPlayed !== undefined && game.hoursPlayed !== null) {
+    const hoursLabel = game.hoursPlayed === 1 ? 'hour' : 'hours';
+    hoursHtml = `<span class="card-stat"><i class="fas fa-clock"></i> ${game.hoursPlayed} ${hoursLabel}</span>`;
   }
   
   card.innerHTML = `
@@ -406,7 +432,7 @@ function createLearningCard(learning) {
         ${coverHtml}
         <div class="card-details">
           <h4 class="card-title">${escapeHtml(learning.topic)}</h4>
-          ${learning.platform ? `<p class="card-subtitle">on ${escapeHtml(learning.platform)}</p>` : ''}
+          ${pickField(learning, 'platform') ? `<p class="card-subtitle">on ${escapeHtml(learning.platform)}</p>` : ''}
           ${learning.instructor ? `<p class="card-instructor">by ${escapeHtml(learning.instructor)}</p>` : ''}
         </div>
       </div>
@@ -538,3 +564,5 @@ function formatStatLabel(key) {
     .replace(/^./, str => str.toUpperCase())
     .trim();
 }
+
+window.loadDashboardData = loadDashboardData;
