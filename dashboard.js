@@ -1,4 +1,4 @@
-const DASHBOARD_API_URL = 'https://amitosh.dev/api/dashboard';
+const DASHBOARD_API_URL = 'https://vercel-edge-api-two.vercel.app/api/dashboard';
 
 const DEMO_DATA = {
   currentlyReading: {
